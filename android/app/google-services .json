@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943630126235",
+    "project_id": "organa-fe5b4",
+    "storage_bucket": "organa-fe5b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943630126235:android:cd2b757d4e6a8ab800ca3e",
+        "android_client_info": {
+          "package_name": "com.example.organa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943630126235-8dusejb6iqb2ib5fsf0kghp1hpop0tcm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb3E4AdY_REWesLiA0q1icR8eabmVrjWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943630126235-8dusejb6iqb2ib5fsf0kghp1hpop0tcm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
