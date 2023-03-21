@@ -149,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 20,
                         ),
                         MaterialButton(
-                          shape: const RoundedRectangleBorder(
+                          shape:  RoundedRectangleBorder(
                               borderRadius:
                               BorderRadius.all(Radius.circular(20.0))),
                           elevation: 5.0,
@@ -161,13 +161,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             signIn(
                                 emailController.text, passwordController.text);
                           },
-                          color: Colors.white,
-                          child: const Text(
+                          child: Text(
                             "Login",
                             style: TextStyle(
                               fontSize: 20,
                             ),
                           ),
+                          color: Colors.white,
                         ),
                         const SizedBox(
                           height: 10,
@@ -177,7 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             maintainAnimation: true,
                             maintainState: true,
                             visible: visible,
-                            child: const CircularProgressIndicator(
+                            child:  CircularProgressIndicator(
                               color: Colors.white,
                             )),
                       ],
@@ -225,37 +225,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     const SizedBox(
                       height: 15,
                     ),
-                   /* Text(
-                      "Made by",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 40,
-                      ),
-                    ),*/
                     const SizedBox(
                       height: 5,
                     ),
-                    /*Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "WEB",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Colors.blue[900],
-                          ),
-                        ),
-                        Text(
-                          "FUN",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30,
-                            color: Colors.yellowAccent[400],
-                          ),
-                        ),
-                      ],
-                    ),*/
                   ],
                 ),
               ),
@@ -274,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
         .get()
         .then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
-        if (documentSnapshot.get('role') == "Doctors") {
+        if (documentSnapshot.get('role') == 'doctors') {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -295,7 +267,7 @@ class _LoginScreenState extends State<LoginScreen> {
     });
   }
 
-  void signIn(String email, String password) async {
+ void signIn(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
         UserCredential userCredential =
@@ -313,6 +285,7 @@ class _LoginScreenState extends State<LoginScreen> {
       }
     }
   }
+
 }
 
 

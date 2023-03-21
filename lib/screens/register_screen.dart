@@ -287,7 +287,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LoginScreen(),
+                                    builder: (context) => const LoginScreen(),
                                   ),
                                 );
                               },
@@ -309,10 +309,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 setState(() {
                                   showProgress = true;
                                 });
-                                signUp(nameController.text,
+                                signUp(
                                     emailController.text,
                                     passwordController.text,
-                                    role);
+                                  role
+                                    );
                               },
                               color: Colors.white, //moved
                               child: const Text(
@@ -347,23 +348,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
   }
 
-void signUp(String name, String email, String password, String role) async {
+void signUp(String email,String password,String role) async {
   const CircularProgressIndicator();
 
   if (_formKey.currentState!.validate()) {
     await _auth
         .createUserWithEmailAndPassword(email: email, password: password)
-        .then((value) => {postDetailsToFirestore(email,role,password)})
+        .then((value) => {postDetailsToFirestore(email,password,role)})
         .catchError((e) {});
   }
 }
 
-postDetailsToFirestore(String email,String password, String role) async {
+postDetailsToFirestore(String email, String password,String role) async {
   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
   var user = _auth.currentUser;
   CollectionReference ref = FirebaseFirestore.instance.collection('users');
-  ref.doc(user!.uid).set({'Email': emailController.text, 'password':passwordController.text, 'role': role});
+  ref.doc(user!.uid).set({'Email': emailController.text, 'Password':passwordController.text,'Role': role });
   Navigator.pushReplacement(
-      context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      context, MaterialPageRoute(builder: (context) => const LoginScreen()));
 }
 }
