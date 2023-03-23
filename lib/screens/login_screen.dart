@@ -246,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
         .get()
         .then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
-        if (documentSnapshot.get('role') == 'doctors') {
+        if (documentSnapshot.get('Role') == 'Doctors') {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
